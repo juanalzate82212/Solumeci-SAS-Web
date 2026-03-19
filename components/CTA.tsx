@@ -1,22 +1,53 @@
 export default function CTA() {
+  const phone = "573137025562";
+  const email = "proyectos.solumeci1@gmail.com"
+
   return (
     <section
       id="contacto"
-      className="bg-blue-900 text-white py-20 px-6 text-center"
+      className="bg-brand-dark relative py-24 px-6 text-center"
     >
-      <h2 className="text-3xl font-bold mb-6">
-        ¿Listo para tu próximo proyecto metálico?
-      </h2>
-      <p className="mb-8">
-        Estamos listos para ayudarte con tu proyecto. Llámanos o escríbenos para
-        más información.
-      </p>
-      <a
-        href="tel:+573137025662"
-        className="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold"
-      >
-        Llamar ahora
-      </a>
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 70% at 50% 50%, rgba(136,51,54,0.18) 0%, transparent 70%)",
+        }}
+      />
+
+      <div className="relative z-10 max-w-2xl mx-auto">
+        <h2 className="text-5xl md:text-[48px] font-extrabold text-white leading-tight tracking-tight mb-5">
+          ¿Listo para tu próximo proyecto metálico?
+        </h2>
+        <p className="text-brand-gray text-lg leading-relaxed mb-11">
+          Estamos listos para ayudarte con tu proyecto. Llámanos o escríbenos
+          para más información.
+        </p>
+
+        <div className="flex justify-center flex-wrap gap-3">
+          <a
+            href={`tel:+${phone}`}
+            className="bg-brand-red hover:bg-brand-red-light text-white font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 flex items-center gap-2"
+          >
+            Llamar ahora
+          </a>
+          <a
+            href={`https://wa.me/${phone}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/80 font-medium px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 border border-white/10 hover:border-white/30 flex items-center gap-2"
+            style={{ background: "rgba(255,255,255,0.05)" }}
+          >
+            WhatsApp
+          </a>
+          <a href={`mailto:${email}`}
+            className="text-white/80 font-medium px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 border border-white/10 hover:border-white/30 flex items-center gap-2"
+            style={{ background: 'rgba(255,255,255,0.05)' }}
+          >
+            Enviar Correo
+          </a>
+        </div>
+      </div>
     </section>
   );
 }
