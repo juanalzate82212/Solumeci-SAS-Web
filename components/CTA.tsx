@@ -5,9 +5,11 @@ export default function CTA() {
   return (
     <section
       id="contacto"
+      aria-labelledby="cta-heading"
       className="bg-brand-dark relative py-24 px-6 text-center"
     >
       <div
+        aria-hidden="true"
         className="absolute inset-0"
         style={{
           background:
@@ -16,7 +18,7 @@ export default function CTA() {
       />
 
       <div className="relative z-10 max-w-2xl mx-auto">
-        <h2 className="text-5xl md:text-[48px] font-extrabold text-white leading-tight tracking-tight mb-5">
+        <h2 id="cta-heading" className="text-5xl md:text-[48px] font-extrabold text-white leading-tight tracking-tight mb-5">
           ¿Listo para tu próximo proyecto metálico?
         </h2>
         <p className="text-brand-gray text-lg leading-relaxed mb-11">
@@ -24,9 +26,10 @@ export default function CTA() {
           para más información.
         </p>
 
-        <div className="flex justify-center flex-wrap gap-3">
+        <nav aria-label="Opciones de contacto" className="flex justify-center flex-wrap gap-3">
           <a
             href={`tel:+${phone}`}
+            aria-label="Llamar a Solumeci"
             className="bg-brand-red hover:bg-brand-red-light text-white font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 flex items-center gap-2"
           >
             Llamar ahora
@@ -35,18 +38,21 @@ export default function CTA() {
             href={`https://wa.me/${phone}`}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="Contactar por WhatsApp (abre en nueva pestaña)"
             className="text-white/80 font-medium px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 border border-white/10 hover:border-white/30 flex items-center gap-2"
             style={{ background: "rgba(255,255,255,0.05)" }}
           >
             WhatsApp
           </a>
-          <a href={`mailto:${email}`}
+          <a 
+            href={`mailto:${email}`}
+            aria-label={`Enviar correo a ${email}`}
             className="text-white/80 font-medium px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5 border border-white/10 hover:border-white/30 flex items-center gap-2"
             style={{ background: 'rgba(255,255,255,0.05)' }}
           >
             Enviar Correo
           </a>
-        </div>
+        </nav>
       </div>
     </section>
   );

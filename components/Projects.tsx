@@ -32,9 +32,16 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="proyectos" className="py-24 px-6 bg-brand-dark">
+    <section
+      id="proyectos"
+      aria-labelledby="projects-heading"
+      className="py-24 px-6 bg-brand-dark"
+    >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl md:text-[52px] font-extrabold text-white leading-tight tracking-tight text-center mb-4">
+        <h2
+          id="projects-heading"
+          className="text-5xl md:text-[52px] font-extrabold text-white leading-tight tracking-tight text-center mb-4"
+        >
           Proyectos Realizados
         </h2>
         <p className="text-brand-gray-light text-lg leading-relaxed max-w-md mx-auto mb-14 text-center">
@@ -42,33 +49,36 @@ export default function Projects() {
           país.
         </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 list-none">
           {projects.map((project) => (
-            <Link
-              key={project.id}
-              href={`/proyectos/${project.slug}`}
-              className="group relative h-64 rounded-2xl overflow-hidden block bg-brand-dark-light"
-            >
-              <Image
-                src={`/images/${project.slug}.jpeg`}
-                alt={`Proyecto ${project.title}`}
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
+            <li key={project.id}>
+              <Link
+                href={`/proyectos/${project.slug}`}
+                aria-label={`Ver proyecto: ${project.title} - ${project.category}`}
+                className="group relative h-64 rounded-2xl overflow-hidden flex bg-brand-dark-light"
+              >
+                <Image
+                  src={`/images/${project.slug}.jpeg`}
+                  alt={`${project.title} - ${project.category}`}
+                  fill
+                  sizes="(max-width: 640 px) 100vw, (max-width: 1024 px) 50vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
 
-              <div className="absolute inset-0 bg-brand-dark opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
+                <div aria-hidden="true" className="absolute inset-0 bg-brand-dark opacity-0 group-hover:opacity-60 transition-opacity duration-300" />
 
-              <div className="absolute inset-0 flex flex-col justify-end p-5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-brand-red text-[11px] font-bold tracking-[2px] uppercase mb-1">
-                  {project.category}
-                </span>
-                <span className="text-white font-bold text-lg leading-tight">
-                  {project.title}
-                </span>
-              </div>
-            </Link>
+                <div aria-hidden="true" className="absolute inset-0 flex flex-col justify-end p-5 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+                  <span className="text-brand-red text-[11px] font-bold tracking-[2px] uppercase mb-1">
+                    {project.category}
+                  </span>
+                  <span className="text-white font-bold text-lg leading-tight">
+                    {project.title}
+                  </span>
+                </div>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

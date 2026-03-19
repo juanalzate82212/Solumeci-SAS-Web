@@ -12,15 +12,15 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto">
         <div className="flex flex-wrap justify-between items-start gap-10 pb-10 border-b border-white/[0.07]">
           <div className="flex flex-col gap-2">
-            <span className="text-xl font-extrabold text-white tracking-tight">
+            <p className="text-xl font-extrabold text-white tracking-tight">
               SOLUMECI SAS
-            </span>
-            <span className="text-[13px] text-white/25 max-w-[220px] leading-relaxed">
+            </p>
+            <p className="text-[13px] text-white/25 max-w-55 leading-relaxed">
               Estructuras metálicas y soluciones civiles en Colombia.
-            </span>
+            </p>
           </div>
 
-          <div className="flex flex-col gap-3">
+          <address className="flex flex-col gap-3 not-italic">
             <span className="text-[10px] font-bold tracking-[2.5px] uppercase text-white/25 mb-1">
               Contacto
             </span>
@@ -36,7 +36,7 @@ export default function Footer() {
                   href={item.href}
                   className="flex items-center gap-2.5 text-[13.5px] text-brand-gray hover:text-white transition-colors"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-red flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
                   {item.label}
                 </a>
               ) : (
@@ -44,22 +44,22 @@ export default function Footer() {
                   key={i}
                   className="flex items-center gap-2.5 text-[13.5px] text-brand-gray"
                 >
-                  <span className="w-1.5 h-1.5 rounded-full bg-brand-red flex-shrink-0" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-brand-red shrink-0" />
                   {item.label}
                 </div>
               ),
             )}
-          </div>
+          </address>
         </div>
 
         <div className="flex flex-wrap justify-between items-center gap-2 pt-6">
-          <span className="text-xs text-white/25">
+          <small className="text-xs text-white/25">
             © {new Date().getFullYear()} Solumeci SAS. Todos los derechos reservados.
-          </span>
-          <span className="flex items-center gap-1.5 text-xs text-white/25">
-            <span className="w-1 h-1 rounded-full bg-brand-red opacity-60" />
+          </small>
+          <p className="flex items-center gap-1.5 text-xs text-white/25">
+            <span aria-hidden="true" className="w-1 h-1 rounded-full bg-brand-red opacity-60" />
             Hecho en Medellín
-          </span>
+          </p>
         </div>
 
       </div>

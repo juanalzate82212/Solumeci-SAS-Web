@@ -1,9 +1,9 @@
 export default function Hero() {
   return (
-    <section className="relative min-h-140 flex items-center justify-center overflow-hidden bg-brand-dark">
+    <section aria-label="Presentación" className="relative min-h-140 flex items-center justify-center overflow-hidden bg-brand-dark">
 
-      {/* Gradiente principal */}
       <div
+        aria-hidden="true"
         className="absolute inset-0"
         style={{
           background: `
@@ -14,7 +14,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Contenido */}
       <div className="relative z-10 text-center px-6 py-20 max-w-2xl mx-auto">
 
         <h1 className="text-5xl md:text-6xl font-extrabold text-white leading-tight tracking-tight mb-5">
@@ -26,7 +25,7 @@ export default function Hero() {
           mobiliario industrial y soluciones civiles en Medellín y toda Colombia.
         </p>
 
-        <div className="flex justify-center flex-wrap gap-3">
+        <nav aria-label="Acciones Principales" className="flex justify-center flex-wrap gap-3">
           <a href="#proyectos"
             className="bg-brand-red hover:bg-brand-red-light text-white font-semibold px-8 py-3.5 rounded-lg transition-all hover:-translate-y-0.5">
             Ver Proyectos
@@ -36,7 +35,7 @@ export default function Hero() {
             style={{ background: 'rgba(255,255,255,0.05)' }}>
             Contáctanos
           </a>
-        </div>
+        </nav>
 
       </div>
     </section>

@@ -19,28 +19,28 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="servicios" className="bg-gray-100 py-24 px-6 text-center">
+    <section id="servicios" aria-labelledby="services-heading" className="bg-gray-100 py-24 px-6 text-center">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-5xl md:text-[52px] font-extrabold text-brand-dark leading-tight tracking-tight mb-4">
+        <h2 id="services-heading" className="text-5xl md:text-[52px] font-extrabold text-brand-dark leading-tight tracking-tight mb-4">
           Nuestros Servicios
         </h2>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {services.map((service, index) => (
-            <div
-              key={index}
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 list-none">
+          {services.map((service) => (
+            <li
+              key={service.title}
               className="group relative bg-white border border-gray-200 rounded-2xl px-7 py-9 text-left overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl"
             >
-              <span className="absolute top-0 left-0 right-0 h-0.75 rounded-t-2xl bg-gray-200 group-hover:bg-brand-red transition-colors" />
+              <span aria-hidden="true" className="absolute top-0 left-0 right-0 h-0.75 rounded-t-2xl bg-gray-200 group-hover:bg-brand-red transition-colors" />
               <h3 className="text-brand-dark font-bold text-[17px] leading-snug mb-3 relative">
                 {service.title}
               </h3>
               <p className="text-brand-gray text-sm leading-relaxed relative">
                 {service.description}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

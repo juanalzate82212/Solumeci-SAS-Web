@@ -23,8 +23,12 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 px-6 bg-brand-red overflow-hidden text-center relative">
+    <section
+      aria-labelledby="why-heading"
+      className="py-24 px-6 bg-brand-red overflow-hidden text-center relative"
+    >
       <div
+        aria-hidden="true"
         className="absolute inset-0"
         style={{
           background: `
@@ -35,7 +39,7 @@ export default function WhyChooseUs() {
       />
 
       <div className="relative z-10 max-w-5xl mx-auto">
-        <h2 className="text-5xl md:text-[52px] font-extrabold text-white leading-tight tracking-tight mb-18">
+        <h2 id="why-heading" className="text-5xl md:text-[52px] font-extrabold text-white leading-tight tracking-tight mb-18">
           ¿Por qué elegir Solumeci?
         </h2>
 
